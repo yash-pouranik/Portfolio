@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Yash Pouranik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-logo">Y</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+        </div>
+        <button class="nav-command-btn" id="command-btn">
+            ⌘
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <section>
+            <h2 class="gradient-text-purple">About</h2>
+            <p>
+                I am a MERN TA Intern at Apna College, where I mentor over 100 students in the MERN stack (JavaScript, React, Node.js, Express, MongoDB) and guide them in debugging. I am currently a B.Tech(CSE) student at Shri Vaishnav Institute of Information Technology, Indore (2023-27, 7.38 CGPA).
+            </p>
+             <p>
+                My technical skills include C, C++, Java, and JavaScript; frontend development with HTML, CSS, EJS, and Mapbox API; backend development using Node.js, Express.js, and Passport.js; databases like MongoDB and SQL; and tools such as Git, GitHub, Render, and Cloudinary.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Contact</h2>
+             <div class="social-links-page">
+                <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
+                <a href="mailto:yashpouranik124@gmail.com">Email</a>
+                <a href="https://drive.google.com/file/d/1b2uIeEn2Ct6G1MaRKiYSL2LG1W2mDQX5/view?usp=sharing" target="_blank">Resume</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette" id="command-palette">
+            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
+            <ul class="command-list" id="command-list">
+                </ul>
+        </div>
+    </div>
+    
+
+
+    <script src="/js/command.js"></script>
+</body>
+</html>

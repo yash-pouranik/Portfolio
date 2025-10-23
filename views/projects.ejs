@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Yash Pouranik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-logo">YP</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+        </div>
+        <button class="nav-command-btn" id="command-btn">
+            ⌘
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <section class="project-page-header">
+            <h2 class="gradient-text-green">Work. Hobby. Open Source.</h2>
+            <p>
+                I'm obsessed with side projects and building in public. 
+                Here are some of the websites and apps I've built.
+            </p>
+        </section>
+
+        <section>
+            <h3>Featured Projects</h3>
+            <div class="project-grid">
+                
+                <% projects.forEach(project => { %>
+                    <a href="/projects/<%= project.slug %>" class="project-card">
+                        <div class="project-card-title">
+                            <%= project.title %>
+                        </div>
+                        <p class="project-card-tagline"><%= project.tagline %></p>
+                        <p class="project-card-stats"><%= project.stats %></p>
+                    </a>
+                <% }) %>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="command-palette-overlay" id="command-palette-overlay">
+        <div class="command-palette" id="command-palette">
+            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
+            <ul class="command-list" id="command-list"></ul>
+        </div>
+    </div>
+    
+    <footer class="footer-content">
+        <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
+        <a href="mailto:yashpouranik124@gmail.com">Email</a>
+        <a href="https://drive.google.com/file/d/1b2uIeEn2Ct6G1MaRKiYSL2LG1W2mDQX5/view?usp=sharing" target="_blank">Resume</a>
+    </footer>
+
+    <script src="/js/command.js"></script>
+</body>
+</html>
