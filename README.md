@@ -1,6 +1,6 @@
 ### Hi there  I'm Yash Pouranik  
 
-Full-stack MERN Developer | Cloud Deployments | Mentor  
+Full-stack Dev
 
 I enjoy converting ideas into production-ready, scalable applications.  
 Recently served as a **MERN Teaching Assistant**, guiding **200+ learners** in debugging, assignments, and real-world project development.
@@ -14,7 +14,7 @@ Recently served as a **MERN Teaching Assistant**, guiding **200+ learners** in d
 ### Featured Projects
 -  **TrekStay** – Full-stack stay booking platform - My First Full Stack Project.
 -  **Nirwirodh** – Team-based file editing with access control and file locking.
--  ***CampusNotes** - Students to share academic notes. Engineered a secure, role-based platform with a verification system and AI assistant.
+-  **CampusNotes** - Students to share academic notes. Engineered a secure, role-based platform with a verification system and AI assistant.
 -  **GullyBazar** – Marketplace platform for vendor–supplier communication.  
 
 ###  Highlights
