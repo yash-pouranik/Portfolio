@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= title %></title>
+<link rel="icon" href="/logo.png" type="image/png">
+
+<meta name="description" content="<%= typeof description !== 'undefined' ? description : 'Yash Pouranik — Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling.' %>">
+<link rel="canonical" href="<%= typeof canonical !== 'undefined' ? canonical : 'https://yashpouranik.bitbros.in/' %>" />
+
+<meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
+<meta name="google-site-verification" content="iuHuFcm1KNqH5bNGwnaFxvQorfCL5zaPaPGLf_wzt3c" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/cal-sans@1.0.1/fonts/variable.css" rel="stylesheet">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="/css/style.css?v=2">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">
+<meta property="og:url" content="<%= typeof canonical !== 'undefined' ? canonical : 'https://yashpouranik.bitbros.in/' %>">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'Yash Pouranik — Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling.' %>">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="<%= title %>">
+<meta property="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'Yash Pouranik — Backend Engineer.' %>">
+
+<!-- Google Structured Data / JSON-LD -->
+<% if (typeof activePage !== 'undefined' && activePage === 'home') { %>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yash Pouranik",
+  "url": "https://yashpouranik.bitbros.in/",
+  "jobTitle": "Backend Engineer",
+  "description": "Backend Engineer specializing in Node.js, Redis, MongoDB, auth systems, and developer tooling. Creator of urBackend and Errlocal.",
+  "knowsAbout": [
+    "Node.js",
+    "Redis",
+    "MongoDB",
+    "Distributed Systems",
+    "API Security",
+    "Developer Tooling"
+  ],
+  "sameAs": [
+    "https://github.com/yash-pouranik",
+    "https://linkedin.com/in/yash-pouranik30",
+    "https://twitter.com/yash_pouranik",
+    "https://medium.com/@yashpouranik124"
+  ]
+}
+</script>
+<% } %>
+
+<% if (typeof project !== 'undefined') { %>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "<%= project.title %>",
+  "description": "<%= project.desc %>",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "author": {
+    "@type": "Person",
+    "name": "Yash Pouranik",
+    "url": "https://yashpouranik.bitbros.in/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<% } %>

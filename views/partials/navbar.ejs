@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <a href="/" class="nav-logo" aria-label="Home">Y</a>
+    <div class="nav-links">
+        <a href="/about" class="<%= typeof activePage !== 'undefined' && activePage === 'about' ? 'active' : '' %>">About</a>
+        <a href="/projects" class="<%= typeof activePage !== 'undefined' && activePage === 'projects' ? 'active' : '' %>">Projects</a>
+        <a href="/videos" class="<%= typeof activePage !== 'undefined' && activePage === 'videos' ? 'active' : '' %>">Videos</a>
+        <a href="/articles" class="<%= typeof activePage !== 'undefined' && activePage === 'articles' ? 'active' : '' %>">Articles</a>
+        <a href="/urbackend/devlog" class="<%= typeof activePage !== 'undefined' && activePage === 'devlog' ? 'active' : '' %>">Devlog</a>
+        <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank" rel="noopener noreferrer">resume</a>
+    </div>
+    <button class="nav-command-btn" id="command-btn" title="Command Palette (Ctrl + K)">
+        ⌘
+    </button>
+</nav>

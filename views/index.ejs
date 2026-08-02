@@ -1,140 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Pouranik - Portfolio</title>
-    <link rel="icon" href="/logo.png" type="image/png">
-    
-    <meta name="description" content="Portfolio of Yash Pouranik, a Full Stack MERN Developer and Computer Science student from Indore. Explore my projects, skills, and experience.">
-    <link rel="canonical" href="https://yashpouranik.bitbros.in/" />
-
-    <meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
-    <meta name="google-site-verification" content="iuHuFcm1KNqH5bNGwnaFxvQorfCL5zaPaPGLf_wzt3c" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v=1">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yashpouranik.bitbros.in/">
-    <meta property="og:title" content="Yash Pouranik - Full Stack Developer">
-    <meta property="og:description" content="Portfolio of Yash Pouranik, a Full Stack MERN Developer and Computer Science student from Indore.">
+    <%- include('partials/head') %>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="/" class="nav-logo">Y</a>
-        <div class="nav-links">
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-            <a href="/urbackend/devlog">Devlog</a>
-        </div>
-        <button class="nav-command-btn" id="command-btn">
-            ⌘
-        </button>
-    </nav>
+    <%- include('partials/navbar') %>
 
     <main class="main-index">
+        <!-- Zeno Rocha Style Hero -->
         <header class="index-header">
             <h1>Yash Pouranik</h1>
-            <p class="subtitle">
-                Full Stack Developer | CSE'27
+            <p class="hero-bio">
+                <strong>Backend Engineer &amp; Maintainer at <a href="https://github.com/yash-pouranik/urBackend" target="_blank" rel="noopener noreferrer">urBackend</a></strong><br>
+                Obsessed with developer experience &amp; high-performance backend systems.
             </p>
-            <p class="subtitle-light">
-                Obsessed with developer experience.
-            </p>
-            
-            <div class="command-prompt">
-                Press <kbd>ctrl</kbd> <kbd>K</kbd> to start →
-            </div>
 
-            <div class="visitor-badge">
-                <span class="visitor-dot"></span>
-                You are the <strong><%= visitNumber %></strong> visitor
+            <div class="hero-meta">
+                <span>Press <kbd>Ctrl</kbd> <kbd>K</kbd> to launch palette</span>
+                <span class="meta-separator">·</span>
+                <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank" rel="noopener noreferrer" class="hero-resume-link">View Resume ↗</a>
+                <span class="meta-separator">·</span>
+                <span class="visitor-badge">
+                    <span class="visitor-dot"></span>
+                    Visitor #<strong><%= visitNumber %></strong>
+                </span>
             </div>
         </header>
 
-    <section class="home-section">
-        <h3 class="section-title">Selected Work</h3>
-        <div class="project-grid">
-            <% featuredProjects.forEach(project => { %>
-                <a href="/projects/<%= project.slug %>" class="project-card">
-                    <div class="project-card-title"><%= project.title %></div>
-                    <p class="project-card-tagline"><%= project.tagline %></p>
-                    <p class="project-card-stats"><%= project.stats %></p>
-                </a>
-            <% }) %>
-        </div>
-        <div style="margin-top: 20px; text-align: left;">
-            <a href="/projects" class="view-all-link">View all projects →</a>
-        </div>
-    </section>
-
-    <section class="home-section">
-        <h3 class="section-title">Writing</h3>
-        <div class="article-grid">
-            <% featuredArticles.forEach(article => { %>
-                <a href="<%= article.url %>" class="article-card" target="_blank" rel="noopener noreferrer">
-                    <div class="article-meta">
-                        <span><%= article.date %></span>
-                        <span><%= article.readTime %></span>
-                    </div>
-                    <div class="article-card-title"><%= article.title %></div>
-                    <p class="article-card-description"><%= article.description %></p>
-                    <span class="article-card-link">Read on Medium ↗</span>
-                </a>
-            <% }) %>
-        </div>
-        <div style="margin-top: 20px; text-align: left;">
-            <a href="/articles" class="view-all-link">Read more →</a>
-        </div>
-    </section>
-
-    <section class="home-section">
-        <h3 class="section-title">I can help you with</h3>
-        <div class="services-grid">
-            <div class="service-item">
-                <h4>01. Web Development</h4>
-                <p>Building fast, SEO-friendly, and scalable web apps using the MERN stack.</p>
+        <!-- Metrics Strip -->
+        <section class="proof-bar-section">
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-number">800+</div>
+                    <div class="proof-label">Active Users</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">8k+</div>
+                    <div class="proof-label">PDF Downloads <a href="https://campusnotes.bitbros.in/">@CampusNotes</a></div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">70%</div>
+                    <div class="proof-label">Auth Speedup</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">40+</div>
+                    <div class="proof-label">OS Contributors</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-number">4</div>
+                    <div class="proof-label">npm Packages</div>
+                </div>
             </div>
-            <div class="service-item">
-                <h4>02. Backend Engineering</h4>
-                <p>Robust APIs, database management (MongoDB/SQL), and secure authentication.</p>
-            </div>
-            <div class="service-item">
-                <h4>03. Mentorship</h4>
-                <p>Guiding students and peers in debugging, code structure, and best practices.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="home-section">
-            <h3 class="section-title">Timeline</h3>
+        <!-- Featured Projects -->
+        <section class="home-section">
+            <div class="section-header-flex">
+                <span class="section-title">Selected Work</span>
+                <a href="/projects" class="view-all-link">View all projects →</a>
+            </div>
+            
+            <div class="project-grid">
+                <% featuredProjects.forEach(project => { %>
+                    <a href="/projects/<%= project.slug %>" class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-card-category"><%= project.category %></span>
+                            <span><%= project.year %></span>
+                        </div>
+                        <div class="project-card-title"><%= project.title %></div>
+                        <div class="project-card-tagline"><%= project.tagline %></div>
+                        
+                        <% if (project.bullets && project.bullets.length > 0) { %>
+                            <ul class="project-bullets-sm">
+                                <% project.bullets.slice(0, 2).forEach(b => { %>
+                                    <li><%= b %></li>
+                                <% }) %>
+                            </ul>
+                        <% } %>
+
+                        <div class="project-card-footer">
+                            <% if (project.stack && project.stack.length > 0) { %>
+                                <div class="project-stack-tags-sm">
+                                    <% project.stack.slice(0, 3).forEach(t => { %>
+                                        <span class="stack-tag-sm"><%= t %></span>
+                                    <% }) %>
+                                </div>
+                            <% } %>
+                            <span class="card-arrow">→</span>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+
+        <!-- Articles -->
+        <section class="home-section">
+            <div class="section-header-flex">
+                <span class="section-title">Writing</span>
+                <a href="/articles" class="view-all-link">Read all articles →</a>
+            </div>
+
+            <div class="article-grid">
+                <% featuredArticles.forEach(article => { %>
+                    <a href="<%= article.url %>" class="article-card" target="_blank" rel="noopener noreferrer">
+                        <div class="article-meta">
+                            <span><%= article.date %></span>
+                            <span><%= article.readTime %></span>
+                        </div>
+                        <div class="article-card-title"><%= article.title %></div>
+                        <div class="article-card-description"><%= article.description %></div>
+                        <div class="article-card-link">Read on Medium ↗</div>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+
+        <!-- Focus Areas -->
+        <section class="home-section">
+            <span class="section-title">Focus</span>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>01. Backend &amp; API Infrastructure</h4>
+                    <p>High-throughput REST APIs, Redis caching layers, MongoDB query optimization, and AES-256-GCM connection pooling.</p>
+                </div>
+                <div class="service-item">
+                    <h4>02. Auth &amp; Security Engineering</h4>
+                    <p>JWT &amp; session auth, rate limiting, row-level access control, and atomic DB updates ($inc, $push).</p>
+                </div>
+                <div class="service-item">
+                    <h4>03. Developer Tooling &amp; SDKs</h4>
+                    <p>CLI utilities (Errlocal) and npm SDK packages (@kiroo/sdk) for stack trace parsing and deterministic API interaction replays.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="home-section">
+            <span class="section-title">Timeline</span>
             <div class="achievements-list">
-
                 <div class="achievement-item">
                     <div class="achievement-year">2026</div>
                     <div class="achievement-content">
-                        <h4>GSSoC'2026 — Project Maintainer</h4>
-                        <p>Selected to lead <strong>urBackend</strong> as an official GSSoC'2026 open-source project, managing 40+ PRs from 25+ global contributors.</p>
+                        <h4>Odoo Offline Hackathon 2026 — Selected</h4>
+                        <p>Selected among <strong>2,500 students out of 20,000+ applicants</strong> nationwide for the Odoo offline hackathon.</p>
                     </div>
                 </div>
 
                 <div class="achievement-item">
                     <div class="achievement-year">2026</div>
                     <div class="achievement-content">
-                        <h4>2nd Place — Technical Writing (Kiroo)</h4>
-                        <p>Authored a Medium article on API interaction replay systems for <strong>Kiroo</strong> and won 2nd place nationally.</p>
+                        <h4>GSSoC'2026 — Project Maintainer</h4>
+                        <p>Selected to lead <a href="https://github.com/yash-pouranik/urBackend" target="_blank" rel="noopener noreferrer" class="link-accent">urBackend</a> as an official open-source project, managing 40+ PRs from 25+ global contributors.</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-year">2026</div>
+                    <div class="achievement-content">
+                        <h4>2nd Place — National Technical Writing (Kiroo)</h4>
+                        <p>Authored a Medium article on API interaction replay systems for <a href="https://medium.com/@yashpouranik124/stop-guessing-api-bugs-how-i-built-git-for-api-interactions-14a29d3bb428" target="_blank" rel="noopener noreferrer" class="link-accent">Kiroo</a> and won 2nd place nationally.</p>
                     </div>
                 </div>
 
                 <div class="achievement-item">
                     <div class="achievement-year">2025 - July</div>
                     <div class="achievement-content">
-                        <h4>MERN TA Intern</h4>
-                        <p>Selected as a Teaching Assistant at <strong>Apna College</strong>. Mentored 200+ students in Full Stack Development.</p>
+                        <h4>MERN TA Intern — Apna College</h4>
+                        <p>Mentored 200+ engineering learners in Full Stack Development &amp; Backend Architecture.</p>
                     </div>
                 </div>
 
@@ -145,39 +178,22 @@
                         <p>Built <strong>GullyBazar</strong> in 48 hours — ranked <strong>Top 25 / ~800 teams</strong> at the Tutedude national hackathon.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-    <section class="home-section" style="margin-bottom: 60px;">
-        <h3 class="section-title">Get in Touch</h3>
-        <p style="color: #b3b3b3; margin-bottom: 20px; max-width: 500px;">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-        </p>
-        <a href="mailto:yashpouranik124@gmail.com" class="email-btn">Say Hello</a>
-    </section>
-
+        <!-- Contact CTA -->
+        <section class="home-section">
+            <span class="section-title">Contact</span>
+            <p style="color: #a1a1aa; margin-bottom: 20px;">
+                Currently open for backend engineering roles. Whether you have a project in mind or just want to chat, feel free to reach out.
+            </p>
+            <a href="mailto:yashpouranik124@gmail.com" class="email-btn">Say Hello</a>
+            <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank" rel="noopener noreferrer" class="email-btn" style="margin-left: 12px;">View Resume</a>
+        </section>
     </main>
 
-    <div class="command-palette-overlay" id="command-palette-overlay">
-        <div class="command-palette" id="command-palette">
-            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
-            <ul class="command-list" id="command-list">
-                </ul>
-        </div>
-    </div>
-
-    
-
-    
-    <footer class="footer-content">
-        <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
-        <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
-        <a href="http://x.com/yash_pouranik" target="_blank">X (Twitter)</a>
-        <a href="https://medium.com/@yashpouranik124" target="_blank">Medium</a>
-        <a href="mailto:yashpouranik124@gmail.com">Email</a>
-        <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank">Resume</a>
-    </footer>
+    <%- include('partials/command-palette') %>
+    <%- include('partials/footer') %>
 
     <script src="/js/command.js"></script>
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>

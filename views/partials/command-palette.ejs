@@ -1,0 +1,35 @@
+<div class="cmd-overlay" id="command-palette-overlay" aria-modal="true" role="dialog">
+    <div class="cmd-modal" id="command-palette">
+
+        <div class="cmd-search-bar">
+            <svg class="cmd-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input
+                type="text"
+                id="command-input"
+                class="cmd-input"
+                placeholder="Search commands..."
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Command search"
+            />
+            <kbd class="cmd-esc-key">esc</kbd>
+        </div>
+
+        <div class="cmd-results" id="command-list"></div>
+
+        <div class="cmd-footer">
+            <div class="cmd-footer-hint">
+                <kbd>↑</kbd><kbd>↓</kbd><span>navigate</span>
+            </div>
+            <div class="cmd-footer-hint">
+                <kbd>↵</kbd><span>open</span>
+            </div>
+            <div class="cmd-footer-hint">
+                <kbd>esc</kbd><span>close</span>
+            </div>
+        </div>
+
+    </div>
+</div>

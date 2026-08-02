@@ -1,145 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= project.title %> - Yash Pouranik</title>
-    <link rel="icon" href="/logo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- SEO & Open Graph -->
-    <meta name="description" content="<%= project.tagline %> - <%= project.desc.substring(0, 150) %>...">
-    <link rel="canonical" href="https://yashpouranik.bitbros.in/projects/<%= project.slug %>" />
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://yashpouranik.bitbros.in/projects/<%= project.slug %>">
-    <meta property="og:title" content="<%= project.title %> - Yash Pouranik">
-    <meta property="og:description" content="<%= project.tagline %>">
+    <%- include('partials/head') %>
 </head>
-<body>
+<body class="page-project-detail">
 
-    <nav class="navbar">
-        <a href="/" class="nav-logo">Y</a>
-        <div class="nav-links">
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-            <a href="/urbackend/devlog">Devlog</a>
-        </div>
-        <button class="nav-command-btn" id="command-btn">
-            ⌘
-        </button>
-    </nav>
+    <%- include('partials/navbar') %>
 
-<main class="main-content">
-        <a href="/projects" class="back-link">
-            <span style="font-family: 'Inter'; margin-right: 5px;">←</span> Back to Projects
-        </a>
-        
-        <div class="project-detail-header" style="margin-top: 40px; margin-bottom: 40px;">
-            <span class="achievement-year" style="color: #00ff88; margin-bottom: 10px; display: block;">
-                <%= project.year || '2024' %>
-            </span>
+    <main class="main-content">
 
-            <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px;">
-                <%= project.title %>
-            </h1>
-           
-            <p class="subtitle" style="font-size: 1.5rem; color: #888; margin-bottom: 30px; font-weight: 400;">
-                <%= project.tagline %>
-            </p>
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/projects">← Projects</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current"><%= project.title %></span>
+        </nav>
 
-            <div class="project-links-detail">
-                <% if (project.live && project.live !== "/" && project.live !== "#") { %>
-                    <a href="<%= project.live %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0;">
-                        Visit Live Site ↗
-                    </a>
+        <article class="detail-article">
+
+            <!-- ── Header ─────────────────────────────────────────── -->
+            <header class="detail-header">
+                <div class="detail-meta-row">
+                    <span class="detail-category"><%= project.category %></span>
+                    <span class="detail-year"><%= project.year %></span>
+                    <% if (project.badge) { %>
+                        <span class="detail-badge"><%= project.badge %></span>
+                    <% } %>
+                </div>
+
+                <h1 class="detail-title"><%= project.title %></h1>
+                <p class="detail-tagline"><%= project.tagline %></p>
+
+                <!-- Link row -->
+                <div class="detail-links">
+                    <% if (project.live && project.live !== '#' && project.live !== '/') { %>
+                        <a href="<%= project.live %>" target="_blank" rel="noopener noreferrer" class="detail-link detail-link--primary">Live ↗</a>
+                    <% } %>
+                    <% if (project.docs) { %>
+                        <a href="<%= project.docs %>" target="_blank" rel="noopener noreferrer" class="detail-link">Docs ↗</a>
+                    <% } %>
+                    <% if (project.npm) { %>
+                        <a href="<%= project.npm %>" target="_blank" rel="noopener noreferrer" class="detail-link">npm ↗</a>
+                    <% } %>
+                    <% if (project.npm_cli) { %>
+                        <a href="<%= project.npm_cli %>" target="_blank" rel="noopener noreferrer" class="detail-link">CLI on npm ↗</a>
+                    <% } %>
+                    <% if (project.npm_sdk) { %>
+                        <a href="<%= project.npm_sdk %>" target="_blank" rel="noopener noreferrer" class="detail-link">SDK on npm ↗</a>
+                    <% } %>
+                    <% if (project.article) { %>
+                        <a href="<%= project.article %>" target="_blank" rel="noopener noreferrer" class="detail-link">Article ↗</a>
+                    <% } %>
+                    <% if (project.repo) { %>
+                        <a href="<%= project.repo %>" target="_blank" rel="noopener noreferrer" class="detail-link">GitHub ↗</a>
+                    <% } %>
+                </div>
+            </header>
+
+            <hr class="detail-rule">
+
+            <!-- ── Body ───────────────────────────────────────────── -->
+            <div class="detail-body">
+
+                <!-- Overview -->
+                <section class="detail-section">
+                    <h2 class="detail-section-label">Overview</h2>
+                    <p class="detail-prose"><%= project.desc %></p>
+                </section>
+
+                <!-- Key achievements -->
+                <% if (project.highlights && project.highlights.length > 0) { %>
+                    <section class="detail-section">
+                        <h2 class="detail-section-label">Engineering Decisions</h2>
+                        <ul class="detail-bullets">
+                            <% project.highlights.forEach(h => { %>
+                                <li><%= h %></li>
+                            <% }) %>
+                        </ul>
+                    </section>
                 <% } %>
 
-                <% if (project.docs) { %>
-                    <a href="<%= project.docs %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #00ff88; color: #00ff88;">
-                        Read Docs ↗
-                    </a>
-                <% } %>
-                
-                <% if (project.npm) { %>
-                    <a href="<%= project.npm %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
-                        View on npm ↗
-                    </a>
-                <% } %>
-                
-                <% if (project.npm_cli) { %>
-                    <a href="<%= project.npm_cli %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
-                        CLI on npm ↗
-                    </a>
-                <% } %>
-                
-                <% if (project.npm_sdk) { %>
-                    <a href="<%= project.npm_sdk %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #cb3837; color: #cb3837;">
-                        SDK on npm ↗
-                    </a>
-                <% } %>
+                <!-- Stack -->
+                <section class="detail-section">
+                    <h2 class="detail-section-label">Stack</h2>
+                    <% if (project.stack && project.stack.length > 0) { %>
+                        <div class="detail-stack-tags">
+                            <% project.stack.forEach(t => { %>
+                                <span class="detail-stack-tag"><%= t %></span>
+                            <% }) %>
+                        </div>
+                    <% } else { %>
+                        <p class="detail-prose"><%= project.stats %></p>
+                    <% } %>
+                </section>
 
-                <% if (project.article) { %>
-                    <a href="<%= project.article %>" target="_blank" class="email-btn" style="margin-right: 15px; margin-top: 0; background: transparent; border: 1px solid #fff; color: #fff;">
-                        Read Article ↗
-                    </a>
-                <% } %>
-                
-                <% if(project.slug !== "yash") {%>
-                    <a href="<%= project.repo %>" target="_blank" class="view-all-link" style="font-size: 1rem;">
-                        View Source Code
-                    </a>
-                <% } else {%>
-                    <a href="<%= project.repo %>" target="_blank" class="view-all-link" style="font-size: 1rem;">
-                        ! Open Source yet 
-                        coming soon...
-                    </a>
-                <% } %>
             </div>
-        </div>
-        
-        <hr style="border-color: #222; margin-bottom: 40px;">
 
-        <div class="project-detail-body" style="font-size: 1.1rem; color: #b3b3b3; line-height: 1.8;">
-            <p><%= project.desc %></p>
-            
-            <% if (project.highlights && project.highlights.length > 0) { %>
-                <ul style="margin-top: 20px; padding-left: 20px;">
-                    <% project.highlights.forEach(function(highlight) { %>
-                        <li style="margin-bottom: 10px;"><%= highlight %></li>
-                    <% }); %>
-                </ul>
-            <% } %>
-
-            <div style="margin-top: 40px;">
-                <h4 style="color: #fff; margin-bottom: 15px;">Tech Stack & Stats</h4>
-                <p style="font-family: 'JetBrains Mono', monospace; color: #666;">
-                    <%= project.stats %>
-                </p>
+            <!-- ── Footer ─────────────────────────────────────────── -->
+            <div class="detail-footer-nav">
+                <a href="/projects" class="detail-back">← All Projects</a>
             </div>
-        </div>
 
+        </article>
     </main>
 
-    <div class="command-palette-overlay" id="command-palette-overlay">
-        <div class="command-palette" id="command-palette">
-            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
-            <ul class="command-list" id="command-list"></ul>
-        </div>
-    </div>
-    
-    <footer class="footer-content">
-        <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
-        <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
-        <a href="http://x.com/yash_pouranik" target="_blank">X (Twitter)</a>
-        <a href="https://medium.com/@yashpouranik124" target="_blank">Medium</a>
-        <a href="mailto:yashpouranik124@gmail.com">Email</a>
-        <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank">Resume</a>
-    </footer>
+    <%- include('partials/command-palette') %>
+    <%- include('partials/footer') %>
 
     <script src="/js/command.js"></script>
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>

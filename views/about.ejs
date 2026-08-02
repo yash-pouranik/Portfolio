@@ -1,117 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Yash Pouranik</title>
-    <link rel="icon" href="/logo.png" type="image/png">
-
-    <meta name="description" content="Portfolio of Yash Pouranik, a Full Stack MERN Developer and Computer Science student from Indore. Explore my projects, skills, and experience.">
-    <link rel="canonical" href="https://yashpouranik.bitbros.in/about" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <meta name="google-site-verification" content="o5KNQ9R-ummCVpBGTiPWtBLvDPdVm-uxMuIQXmj3mlU" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <%- include('partials/head') %>
 </head>
-<body>
+<body class="page-about">
 
-    <nav class="navbar">
-        <a href="/" class="nav-logo">Y</a>
-        <div class="nav-links">
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-            <a href="/urbackend/devlog">Devlog</a>
-        </div>
-        <button class="nav-command-btn" id="command-btn">
-            ⌘
-        </button>
-    </nav>
+    <%- include('partials/navbar') %>
 
-<main class="main-content">
-        <section>
-            <h2 class="gradient-text-purple">About Me</h2>
-            <p>
-                I am a <strong>Full Stack Developer</strong> and a Computer Science undergraduate (CSE'27) at Shri Vaishnav Institute of Information Technology, Indore.
-                I am passionate about building real-world web applications that solve actual problems, from local business ledgers to large-scale educational platforms.
+    <main class="main-content">
+        <section class="about-hero-section">
+            <span class="section-kicker">ENGINEERING PROFILE</span> <br>
+            <h1 class="page-title">About Me</h1>
+            <p class="about-lead">
+                I am a <strong>Backend Engineer</strong> and Computer Science undergraduate (CSE'27) at Shri Vaishnav Institute of Information Technology, Indore.
             </p>
             <p>
-                I actively participate in hackathons (like Void Hack 7.0 & Solve for India) and love contributing to open source.
+                My focus is building real-world backend infrastructure — high-throughput APIs, Redis caching layers, row-level access control primitives, and developer utilities. My code serves real people every day: from 800+ university students using CampusNotes to a local milk vendor who replaced his handwritten credit register with my ledger app.
+            </p>
+            <p>
+                As an active open-source maintainer (GSSoC'2026 Maintainer for <a href="https://github.com/yash-pouranik/urBackend" target="_blank" rel="noopener noreferrer" class="link-accent">urBackend</a>), I review PRs, triage infrastructure bugs, and guide external contributors in writing clean, scalable Node.js code.
             </p>
         </section>
 
-        <section>
-            <h3>Experience</h3>
-            <div class="project">
-                <div style="display:flex; justify-content:space-between; align-items:baseline;">
-                    <h4 style="color:#fff; margin-bottom:0;">MERN TA Intern</h4>
-                    <span style="color:#666; font-size:0.9rem;">July 2025 - Nov 2025</span>
+        <!-- Technical Skillset Breakdown -->
+        <section class="about-section">
+            <span class="section-kicker">TECHNICAL STACK</span>
+            <h2 class="section-heading">Technologies &amp; Architecture</h2>
+            
+            <div class="tech-category-group">
+                <div class="tech-category">
+                    <h4>Backend &amp; Infrastructure (Core)</h4>
+                    <div class="tech-stack-container">
+                        <span class="tech-badge primary">Node.js (ES6+)</span>
+                        <span class="tech-badge primary">Express.js</span>
+                        <span class="tech-badge primary">REST API Design</span>
+                        <span class="tech-badge primary">Redis (Caching &amp; Rate-Limiting)</span>
+                        <span class="tech-badge primary">MongoDB / Mongoose (Atlas)</span>
+                        <span class="tech-badge primary">MySQL / SQL</span>
+                    </div>
                 </div>
-                <p style="color:#00ff88; margin-bottom:5px; font-size:0.95rem;">Apna College (Remote)</p>
-                <ul style="color:#b3b3b3; margin-left:20px; font-size:0.95rem;">
-                    <li>Mentored 200+ engineering students in JS, Node.js, Express, MongoDB, and Code Modularity.</li>
-                    <li>Helped learners understand backend architecture, API design, and debugging strategies.</li>
-                    <li>Assisted with auth flows (JWT &amp; sessions), file uploads, DB schema design, and backend runtime errors.</li>
+
+                <div class="tech-category">
+                    <h4>Security, Auth &amp; Performance</h4>
+                    <div class="tech-stack-container">
+                        <span class="tech-badge secondary">JWT Auth</span>
+                        <span class="tech-badge secondary">Session-based Auth</span>
+                        <span class="tech-badge secondary">AES-256-GCM Encryption</span>
+                        <span class="tech-badge secondary">Atomic DB Updates ($inc, $push)</span>
+                        <span class="tech-badge secondary">Row-Level Security (RLS)</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>DevTools, Cloud &amp; Deployment</h4>
+                    <div class="tech-stack-container">
+                        <span class="tech-badge">Git &amp; GitHub Actions</span>
+                        <span class="tech-badge">npm Package Publishing</span>
+                        <span class="tech-badge">Cloudinary (Round-Robin Storage)</span>
+                        <span class="tech-badge">Render</span>
+                        <span class="tech-badge">Vercel</span>
+                        <span class="tech-badge">Groq LLM API</span>
+                        <span class="tech-badge">Lingo.dev SDK</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Languages &amp; Web Fundamentals</h4>
+                    <div class="tech-stack-container">
+                        <span class="tech-badge">JavaScript (Node &amp; Browser)</span>
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">EJS Templates</span>
+                        <span class="tech-badge">HTML5 / CSS3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="about-section">
+            <span class="section-kicker">WORK EXPERIENCE</span>
+            <h2 class="section-heading">Experience</h2>
+            
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-role">MERN Technical Assistant Intern</h3>
+                        <span class="experience-company">Apna College (Remote)</span>
+                    </div>
+                    <span class="experience-duration">July 2025 – Nov 2025</span>
+                </div>
+                <ul class="experience-bullets">
+                    <li>Mentored 200+ engineering learners in JS runtime behavior, Node.js event loop, Express routing, MongoDB schema optimization, and modular code architecture.</li>
+                    <li>Guided students through backend debugging, stateful vs. stateless auth flows (JWT &amp; sessions), file storage integration, and error handling middleware.</li>
+                    <li>Reviewed student capstone backends for REST compliance, payload validation, and database connection handling.</li>
                 </ul>
             </div>
         </section>
 
-        <section>
-            <h3>Education</h3>
-            <div class="project">
-                <h4 style="color:#fff; margin-bottom:5px;">Bachelor of Technology (CSE)</h4>
-                <p style="color:#888; margin-bottom:0;">Shri Vaishnav Institute of Information Technology, Indore</p>
-                <p style="color:#666; font-size:0.9rem;">2023 - 2027 | CGPA: 7.5</p>
-            </div>
-        </section>
-        
-        <section>
-            <h3>Tech Stack</h3>
-            <div class="tech-stack-container">
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">Express.js</span>
-                <span class="tech-badge">REST APIs</span>
-                <span class="tech-badge">JWT</span>
-                <span class="tech-badge">Session Auth</span>
-                <span class="tech-badge">MVC Architecture</span>
-                <span class="tech-badge">MongoDB (Atlas)</span>
-                <span class="tech-badge">Redis</span>
-                <span class="tech-badge">MySQL</span>
-                <span class="tech-badge">Cloudinary</span>
-                <span class="tech-badge">JavaScript (ES6+)</span>
-                <span class="tech-badge">Java</span>
-                <span class="tech-badge">HTML &amp; CSS</span>
-                <span class="tech-badge">Bootstrap</span>
-                <span class="tech-badge">React.js</span>
-                <span class="tech-badge">EJS</span>
-                <span class="tech-badge">Git &amp; GitHub</span>
-                <span class="tech-badge">Render</span>
-                <span class="tech-badge">Vercel</span>
-                <span class="tech-badge">Groq API</span>
-                <span class="tech-badge">Lingo.dev</span>
-                <span class="tech-badge">VS Code</span>
+        <!-- Education -->
+        <section class="about-section">
+            <span class="section-kicker">ACADEMIC BACKGROUND</span>
+            <h2 class="section-heading">Education</h2>
+            <div class="education-card">
+                <h3>Bachelor of Technology — Computer Science &amp; Engineering</h3>
+                <p class="school-name">Shri Vaishnav Institute of Information Technology, Indore</p>
+                <div class="education-meta">
+                    <span>2023 — 2027</span>
+                    <span>CGPA: 7.5</span>
+                </div>
             </div>
         </section>
 
-        <section style="margin-top: 40px;">
-            <h3>Achievements &amp; Open Source</h3>
+        <!-- Open Source & Achievements -->
+        <section class="about-section">
+            <span class="section-kicker">OPEN SOURCE &amp; AWARDS</span>
+            <h2 class="section-heading">Achievements &amp; Contributions</h2>
+            
             <div class="achievements-list">
-
                 <div class="achievement-item">
                     <div class="achievement-year">2026</div>
                     <div class="achievement-content">
-                        <h4>GSSoC'2026 — Project Maintainer</h4>
-                        <p>Selected to lead <a href="https://github.com/yash-pouranik/urBackend" target="_blank" style="color:#00ff88;">urBackend</a> as an official open-source project under GSSoC'2026. Currently managing and reviewing contributions from global developers — 40+ forks, 30+ stars, 40+ PRs reviewed from 25+ external contributors.</p>
+                        <h4>Odoo Offline Hackathon 2026 — Selected</h4>
+                        <p>Selected among <strong>2,500 participants out of 20,000+ applicants</strong> nationwide to compete at the Odoo offline hackathon.</p>
                     </div>
                 </div>
 
                 <div class="achievement-item">
                     <div class="achievement-year">2026</div>
                     <div class="achievement-content">
-                        <h4>2nd Place — Technical Writing (Kiroo)</h4>
-                        <p>Secured 2nd place in a national technical writing competition for <a href="http://kiroo.bitbros.in/" target="_blank" style="color:#00ff88;">Kiroo</a>. Authored a detailed <a href="https://medium.com/@yashpouranik124/stop-guessing-api-bugs-how-i-built-git-for-api-interactions-14a29d3bb428" target="_blank" style="color:#00ff88;">Medium article</a> on API interaction replay systems and debugging workflows.</p>
+                        <h4>GSSoC'2026 Open Source Project Maintainer</h4>
+                        <p>Leading <a href="https://github.com/yash-pouranik/urBackend" target="_blank" rel="noopener noreferrer" class="link-accent">urBackend</a> as an official GSSoC'26 project. Reviewed 100+ PRs from 40+ international contributors, managing schema validation additions, auth optimizations, and SDK integration.</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-year">2026</div>
+                    <div class="achievement-content">
+                        <h4>National 2nd Place — Technical Writing (Kiroo)</h4>
+                        <p>Secured 2nd place in a national technical writing contest for <a href="https://kiroo.bitbros.in/" target="_blank" rel="noopener noreferrer" class="link-accent">Kiroo</a>. Authored a detailed architectural analysis on <a href="https://medium.com/@yashpouranik124/stop-guessing-api-bugs-how-i-built-git-for-api-interactions-14a29d3bb428" target="_blank" rel="noopener noreferrer" class="link-accent">API interaction replay &amp; deterministic debugging workflows ↗</a>.</p>
                     </div>
                 </div>
 
@@ -119,7 +146,7 @@
                     <div class="achievement-year">2025</div>
                     <div class="achievement-content">
                         <h4>Top 25 / ~800 Teams — Tutedude Solve for India</h4>
-                        <p>Ranked in the top 25 out of ~800 competing teams at the Tutedude–Solve for India national hackathon. Built <strong>GullyBazar</strong>, a hyperlocal marketplace, in 48 hours with a team of 3.</p>
+                        <p>Ranked in the top 25 out of ~800 competing teams at the Tutedude–Solve for India national hackathon. Built <strong>GullyBazar</strong>, a hyperlocal supplier marketplace, in 48 hours.</p>
                     </div>
                 </div>
 
@@ -127,35 +154,28 @@
                     <div class="achievement-year">2025</div>
                     <div class="achievement-content">
                         <h4>Open Source Contribution — universal-app-opener</h4>
-                        <p>Contributed Instagram deep-link handling logic to <strong>universal-app-opener</strong>, distinguishing profiles, posts, reels, and platform-specific Android/iOS behaviors. <a href="https://github.com/mdsaban/universal-app-opener/pull/12" target="_blank" style="color:#00ff88;">View PR ↗</a></p>
+                        <p>Contributed deep-linking logic for Instagram URLs to <strong>universal-app-opener</strong>, differentiating between profiles, posts, reels, and Android/iOS fallback handlers. <a href="https://github.com/mdsaban/universal-app-opener/pull/12" target="_blank" rel="noopener noreferrer" class="link-accent">View Merged PR #12 ↗</a></p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <section style="margin-top: 40px;">
-            <h2>Contact</h2>
-             <div class="social-links-page">
-                <a href="https://linkedin.com/in/yash-pouranik30" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yash-pouranik" target="_blank">GitHub</a>
-                <a href="http://x.com/yash_pouranik" target="_blank">X (Twitter)</a>
-                <a href="https://medium.com/@yashpouranik124" target="_blank">Medium</a>
-                <a href="mailto:yashpouranik124@gmail.com">Email</a>
-                <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank">Resume</a>
+        <!-- Socials & Resume CTA -->
+        <section class="about-section contact-section-about">
+            <h2 class="section-heading">Connect</h2>
+            <div class="social-links-page">
+                <a href="https://linkedin.com/in/yash-pouranik30" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="https://github.com/yash-pouranik" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://x.com/yash_pouranik" target="_blank" rel="noopener noreferrer">X (Twitter) ↗</a>
+                <a href="https://medium.com/@yashpouranik124" target="_blank" rel="noopener noreferrer">Medium ↗</a>
+                <a href="mailto:yashpouranik124@gmail.com">Email ↗</a>
+                <a href="/YASH_POURANIK__RESUME_JUlY2026.pdf" target="_blank" rel="noopener noreferrer" class="link-accent">Download Resume (PDF) ↗</a>
             </div>
         </section>
     </main>
 
-    <div class="command-palette-overlay" id="command-palette-overlay">
-        <div class="command-palette" id="command-palette">
-            <input type="text" placeholder="Type a command or search..." class="command-input" id="command-input">
-            <ul class="command-list" id="command-list">
-                </ul>
-        </div>
-    </div>
-    
-
+    <%- include('partials/command-palette') %>
+    <%- include('partials/footer') %>
 
     <script src="/js/command.js"></script>
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>

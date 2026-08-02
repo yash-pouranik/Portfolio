@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body class="page-videos">
+
+    <%- include('partials/navbar') %>
+
+    <main class="main-content">
+        <header class="project-page-header">
+            <span class="section-kicker">TALKS &amp; DEMOS</span> <br>
+            <h1 class="page-title">Videos &amp; Walkthroughs</h1>
+            <p class="page-description">
+                Screen recordings, feature walkthroughs, and technical deep-dives of my open-source tools and backend systems.
+            </p>
+        </header>
+
+        <section class="home-section" style="margin-top: 30px;">
+            <div class="video-grid">
+                <% videos.forEach(video => { %>
+                    <a href="<%= video.url %>" class="video-card" target="_blank" rel="noopener noreferrer">
+                        <div class="video-thumbnail-wrapper">
+                            <img src="https://img.youtube.com/vi/<%= video.id %>/mqdefault.jpg" alt="<%= video.title %>" class="video-thumbnail-img">
+                            <span class="video-duration-badge"><%= video.duration %></span>
+                        </div>
+                        <div class="video-card-content">
+                            <h2 class="video-card-title"><%= video.title %></h2>
+                            <p class="video-card-description"><%= video.description %></p>
+                            <div class="video-card-footer">
+                                <span><%= video.date %> · Demo</span>
+                                <span class="video-watch-link">Watch on YouTube ↗</span>
+                            </div>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/command-palette') %>
+    <%- include('partials/footer') %>
+
+    <script src="/js/command.js"></script>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</body>
+</html>
