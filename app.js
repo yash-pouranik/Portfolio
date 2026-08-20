@@ -246,6 +246,14 @@ const projects = [
 
 const articles = [
     {
+        title: "Why Telegram is Spending Crores for a New Web Domain Called .gram",
+        url: "https://medium.com/@yashpouranik124/why-telegram-is-spending-crores-for-a-new-web-domain-called-gram-e6dd888f9302?sharedUserId=yashpouranik124",
+        date: "Aug 18",
+        readTime: "4 min read",
+        tag: "Tech Strategy",
+        description: "An analysis of Telegram's strategic application to ICANN for the '.gram' TLD and how registry ownership prevents platform DNS disruptions."
+    },
+    {
         title: "I Had Zero Idea What RLS Was, So I Built It for MongoDB",
         url: "https://medium.com/@yashpouranik124/i-had-zero-idea-what-rls-was-so-i-built-it-for-mongodb-9f1e11eeba8a",
         date: "Jul 25",
